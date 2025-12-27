@@ -1,0 +1,5 @@
+pandas>=1.5
+scikit-learn>=1.2
+joblib
+numpy
+sentence-transformers>=2.2.0

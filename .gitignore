@@ -1,0 +1,30 @@
+# Exclude Images HTML folder
+Images HTML/
+
+# Exclude PDF task file
+AI Technical Task_2025.pdf
+
+# Exclude test cases CSV
+sentiment_test_cases_2025.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

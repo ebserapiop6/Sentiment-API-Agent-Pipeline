@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Customer Support Automation - Sprout Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+        
+        .slide {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            padding: 60px 80px;
+            background: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide h1 {
+            font-size: 3.5em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .slide h2 {
+            font-size: 2.5em;
+            color: #34495e;
+            margin-bottom: 40px;
+            border-bottom: 4px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .slide h3 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin: 25px 0 15px 0;
+        }
+        
+        .slide p, .slide li {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .slide ul {
+            margin-left: 40px;
+        }
+        
+        .subtitle {
+            font-size: 1.8em;
+            color: #7f8c8d;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .author {
+            font-size: 1.2em;
+            color: #95a5a6;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .screenshot-placeholder {
+            border: 3px dashed #667eea;
+            background: #f8f9fa;
+            padding: 40px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 10px;
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .metric-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .metric-box h3 {
+            font-size: 3em;
+            margin: 0;
+            color: white;
+        }
+        
+        .metric-box p {
+            font-size: 1.2em;
+            margin: 10px 0 0 0;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .nav-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        
+        .nav-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        .slide-number {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            color: #667eea;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 8px;
+            border-radius: 3px;
+            color: #856404;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+        }
+        
+        .flow-diagram {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 1.1em;
+            line-height: 2;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide active">
+    <h1>🤖 AI-Powered Customer Support Automation</h1>
+    <p class="subtitle">Intelligent Sentiment Analysis + Automated Workflow Routing</p>
+    <p class="subtitle" style="font-size: 1.4em; margin-top: 60px;">Technical Task Demonstration</p>
+    <p class="author">Sprout Solutions | December 2025</p>
+    <p class="author">Presented by: <a href="https://www.linkedin.com/in/ethan-serapio-32b2b0220/" style="color: #667eea; text-decoration: none;">Ethan Serapio</a></p>
+    <p class="author" style="margin-top: 20px;">
+        <a href="https://github.com/ebserapiop6/Sentiment-API-Agent-Pipeline" style="color: #667eea; text-decoration: none; font-size: 1.1em;">
+            📂 GitHub Repository
+        </a>
+    </p>
+</div>
+
+<!-- Slide 2: The Problem -->
+<div class="slide">
+    <h2>📋 The Challenge</h2>
+    <div style="margin-top: 40px;">
+        <h3>😡 Customer Support Pain Points:</h3>
+        <ul>
+            <li><strong>Manual Message Sorting:</strong> Support teams spend hours categorizing customer messages</li>
+            <li><strong>Delayed Response to Angry Customers:</strong> Urgent issues get lost in the queue</li>
+            <li><strong>Inconsistent Handling:</strong> Different agents respond differently to similar situations</li>
+            <li><strong>Unclear Messages:</strong> Time wasted on back-and-forth clarifications</li>
+        </ul>
+        
+        <h3 style="margin-top: 50px;">💡 The Need:</h3>
+        <p><span class="highlight">Intelligent automation that understands customer emotions and routes messages appropriately</span></p>
+    </div>
+</div>
+
+<!-- Slide 3: The Solution -->
+<div class="slide">
+    <h2>✨ The Solution</h2>
+    <div style="margin-top: 40px;">
+        <p style="font-size: 1.5em; text-align: center; margin-bottom: 50px;">
+            <strong>End-to-End AI System</strong> that automatically analyzes sentiment and takes intelligent actions
+        </p>
+        
+        <div class="three-column">
+            <div class="project-card">
+                <div class="emoji">🧠</div>
+                <h3>Sentiment Analysis</h3>
+                <p>Machine learning model that detects emotions in text with 87% accuracy</p>
+            </div>
+            
+            <div class="project-card">
+                <div class="emoji">⚡</div>
+                <h3>REST API</h3>
+                <p>Lightning-fast service that processes requests in under 100ms</p>
+            </div>
+            
+            <div class="project-card">
+                <div class="emoji">🤖</div>
+                <h3>AI Agent</h3>
+                <p>Smart assistant that routes messages and generates responses</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: How It Works -->
+<div class="slide">
+    <h2>🔄 How It Works</h2>
+    <div class="flow-diagram">
+        Customer sends message<br>
+        &nbsp;&nbsp;↓<br>
+        <strong>AI analyzes sentiment</strong> (negative/neutral/positive)<br>
+        &nbsp;&nbsp;↓<br>
+        <strong>System checks confidence level</strong><br>
+        &nbsp;&nbsp;↓<br>
+        <strong>Agent makes smart decision:</strong><br>
+        &nbsp;&nbsp;• 😡 Angry (>70% negative) → <span class="highlight">ESCALATE</span> to human support<br>
+        &nbsp;&nbsp;• 🤔 Unclear (<60% confidence) → <span class="highlight">ASK</span> for clarification<br>
+        &nbsp;&nbsp;• 😊 Happy → <span class="highlight">THANK</span> customer<br>
+        &nbsp;&nbsp;• 😐 Neutral → <span class="highlight">PROVIDE</span> helpful information<br>
+        &nbsp;&nbsp;↓<br>
+        <strong>AI generates contextual response</strong><br>
+        &nbsp;&nbsp;↓<br>
+        Response delivered to customer
+    </div>
+</div>
+
+<!-- Slide 5: Project 1 - Sentiment Analysis -->
+<div class="slide">
+    <h2>🧠 Project 1: Sentiment Analysis Model</h2>
+    
+    <div class="two-column">
+        <div>
+            <h3>What It Does:</h3>
+            <ul>
+                <li>Reads customer messages</li>
+                <li>Understands the emotion behind the words</li>
+                <li>Assigns sentiment: Positive, Neutral, or Negative</li>
+                <li>Provides confidence score (0-100%)</li>
+            </ul>
+            
+            <h3 style="margin-top: 40px;">Technology:</h3>
+            <ul>
+                <li>Machine Learning (SVM)</li>
+                <li>Sentence Embeddings (384 dimensions)</li>
+                <li>Trained on 489 real examples</li>
+            </ul>
+        </div>
+        
+        <div>
+            <div class="metric-box">
+                <h3>87%</h3>
+                <p>Accuracy</p>
+            </div>
+            <div class="metric-box">
+                <h3>~4 sec</h3>
+                <p>Training Time</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Project 2 - API Service -->
+<div class="slide">
+    <h2>⚡ Project 2: Sentiment API Service</h2>
+    
+    <div class="two-column">
+        <div>
+            <h3>What It Does:</h3>
+            <ul>
+                <li>Makes the AI model available to other applications</li>
+                <li>Processes single or multiple messages</li>
+                <li>Returns instant sentiment analysis</li>
+                <li>Works 24/7 without breaks</li>
+            </ul>
+            
+            <div class="metric-box" style="margin-top: 40px;">
+                <h3>&lt;100ms</h3>
+                <p>Response Time</p>
+            </div>
+            <div class="metric-box">
+                <h3>5</h3>
+                <p>API Endpoints</p>
+            </div>
+        </div>
+        
+        <div>
+            <img src="Images HTML/SS1.png" alt="API running in terminal" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 20px; display: block;">
+            
+            <img src="Images HTML/SS2.png" alt="Swagger API documentation" style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: block;">
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Project 3 - AI Agent -->
+<div class="slide">
+    <h2>🤖 Project 3: AI Agent + Chat Interface</h2>
+    
+    <div class="two-column">
+        <div>
+            <h3>What It Does:</h3>
+            <ul>
+                <li>Connects to the Sentiment API</li>
+                <li>Analyzes every customer message</li>
+                <li>Makes intelligent routing decisions</li>
+                <li>Generates human-like responses using AI (Groq LLM)</li>
+                <li>Maintains conversation history</li>
+            </ul>
+            
+            <h3 style="margin-top: 40px;">4 Smart Actions:</h3>
+            <ul>
+                <li>🚨 <strong>Escalate</strong> - Urgent issues to humans</li>
+                <li>❓ <strong>Clarify</strong> - Ask for more details</li>
+                <li>✅ <strong>Acknowledge</strong> - Thank happy customers</li>
+                <li>💡 <strong>Help</strong> - Provide information</li>
+            </ul>
+        </div>
+        
+        <div>
+            <div class="metric-box">
+                <h3>&lt;1.5s</h3>
+                <p>End-to-End Response</p>
+            </div>
+            
+            <img src="Images HTML/SS3.png" alt="Streamlit chat interface" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-top: 30px; display: block;">
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Live Demo - Example 1 -->
+<div class="slide">
+    <h2>🎬 Demo: Angry Customer (Escalation)</h2>
+    
+    <div style="margin-top: 40px;">
+        <h3>Customer Message:</h3>
+        <div style="background: #ffe6e6; padding: 20px; border-radius: 10px; border-left: 5px solid #dc3545; margin: 20px 0;">
+            <p style="font-size: 1.4em; color: #721c24;">
+                "This is absolutely terrible! I've been waiting for 3 hours and nobody has helped me! I want a refund NOW!"
+            </p>
+        </div>
+        
+        <img src="Images HTML/SS4.png" alt="Angry customer demo - escalation" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;">
+    </div>
+</div>
+
+<!-- Slide 9: Live Demo - Example 2 -->
+<div class="slide">
+    <h2>🎬 Demo: Unclear Message (Clarification)</h2>
+    
+    <div style="margin-top: 40px;">
+        <h3>Customer Message:</h3>
+        <div style="background: #fff8e1; padding: 20px; border-radius: 10px; border-left: 5px solid #ffc107; margin: 20px 0;">
+            <p style="font-size: 1.4em; color: #856404;">
+                "hmm not sure about this thing"
+            </p>
+        </div>
+        
+        <img src="Images HTML/SS5.png" alt="Neutral request demo" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: block; margin: 0 auto;">
+    </div>
+</div>
+
+<!-- Slide 10: Live Demo - Sample Buttons -->
+<div class="slide">
+    <h2>🎮 Quick Testing with Sample Buttons</h2>
+    
+    <div style="margin-top: 40px;">
+        <p style="font-size: 1.4em; margin-bottom: 30px;">The interface includes <strong>4 quick-test buttons</strong> for instant demonstrations:</p>
+        
+        <img src="Images HTML/SS6.png" alt="Sample buttons sidebar" style="max-width: 50%; max-height: 550px; object-fit: contain; margin: 0 auto; display: block; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+        
+        <p style="text-align: center; margin-top: 30px; font-size: 1.3em;">
+            <span class="highlight">Click any button → See instant AI analysis and response</span>
+        </p>
+    </div>
+</div>
+
+<!-- Slide 11: Key Results -->
+<div class="slide">
+    <h2>📊 Results & Performance</h2>
+    
+    <div class="three-column" style="margin-top: 50px;">
+        <div>
+            <div class="metric-box">
+                <h3>87%</h3>
+                <p>Model Accuracy</p>
+            </div>
+            <div class="metric-box">
+                <h3>&lt;100ms</h3>
+                <p>API Response</p>
+            </div>
+        </div>
+        
+        <div>
+            <div class="metric-box">
+                <h3>&lt;1.5s</h3>
+                <p>End-to-End</p>
+            </div>
+            <div class="metric-box">
+                <h3>95%+</h3>
+                <p>Escalation Accuracy</p>
+            </div>
+        </div>
+        
+        <div>
+            <div class="metric-box">
+                <h3>4</h3>
+                <p>Action Types</p>
+            </div>
+            <div class="metric-box">
+                <h3>24/7</h3>
+                <p>Availability</p>
+            </div>
+        </div>
+    </div>
+    
+    <p style="text-align: center; margin-top: 50px; font-size: 1.3em;">
+        <strong>Technology Stack:</strong> Python, scikit-learn, FastAPI, Groq (Llama 3.3 70B), Streamlit, Docker
+    </p>
+</div>
+
+<!-- Slide 12: Business Value -->
+<div class="slide">
+    <h2>💼 Business Value & Benefits</h2>
+    
+    <div class="two-column" style="margin-top: 50px;">
+        <div>
+            <h3>⏱️ Time Savings:</h3>
+            <ul>
+                <li>Instant message categorization</li>
+                <li>No manual sorting required</li>
+                <li>Automated clarification questions</li>
+                <li>Faster response times</li>
+            </ul>
+            
+            <h3 style="margin-top: 40px;">😊 Customer Satisfaction:</h3>
+            <ul>
+                <li>Urgent issues get immediate attention</li>
+                <li>Consistent, professional responses</li>
+                <li>No customers fall through cracks</li>
+                <li>24/7 intelligent routing</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3>💰 Cost Efficiency:</h3>
+            <ul>
+                <li>Reduces manual workload</li>
+                <li>Optimizes support team resources</li>
+                <li>Prevents escalations from being missed</li>
+                <li>Scalable without adding staff</li>
+            </ul>
+            
+            <h3 style="margin-top: 40px;">📈 Scalability:</h3>
+            <ul>
+                <li>Handles 100+ concurrent requests</li>
+                <li>Docker-ready for cloud deployment</li>
+                <li>Easy integration via REST API</li>
+                <li>Expandable to multiple channels</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 13: Technical Highlights -->
+<div class="slide">
+    <h2>⚙️ Technical Highlights</h2>
+    
+    <div style="margin-top: 40px;">
+        <div class="two-column">
+            <div>
+                <h3>🎯 Smart Decision Rules:</h3>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <p><strong>Escalation Threshold:</strong> 70%</p>
+                    <p><strong>Clarification Threshold:</strong> 60%</p>
+                    <p style="margin-top: 15px;">If negative sentiment > 70% → Escalate<br>
+                    If confidence < 60% → Ask for clarification</p>
+                </div>
+                
+                <h3>🔄 Integration Ready:</h3>
+                <ul>
+                    <li>REST API with 5 endpoints</li>
+                    <li>Auto-generated documentation</li>
+                    <li>Docker containerization</li>
+                    <li>CORS support for web apps</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>🤖 AI-Powered Responses:</h3>
+                <ul>
+                    <li>Uses Groq's Llama 3.3 70B model</li>
+                    <li>Context-aware conversations</li>
+                    <li>Maintains conversation history</li>
+                    <li>Generates human-like language</li>
+                </ul>
+                
+                <h3 style="margin-top: 40px;">📦 Complete Package:</h3>
+                <ul>
+                    <li>3 integrated projects</li>
+                    <li>Comprehensive documentation</li>
+                    <li>Ready-to-run examples</li>
+                    <li>Test scripts included</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 14: Future Enhancements -->
+<div class="slide">
+    <h2>🚀 Future Enhancements & Recommendations</h2>
+    
+    <div style="margin-top: 40px;">
+        <div class="two-column">
+            <div>
+                <h3>🧠 Model Improvements:</h3>
+                <ul>
+                    <li>Upgrade to transformer models (BERT, RoBERTa)</li>
+                    <li>Fine-tune on company-specific data</li>
+                    <li>Add emotion intensity levels</li>
+                    <li>Multi-language support</li>
+                </ul>
+                
+                <h3 style="margin-top: 40px;">📊 Analytics & Monitoring:</h3>
+                <ul>
+                    <li>Dashboard for sentiment trends</li>
+                    <li>Real-time performance metrics</li>
+                    <li>A/B testing framework</li>
+                    <li>Customer satisfaction tracking</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>☁️ Production Deployment:</h3>
+                <ul>
+                    <li>Deploy to AWS/GCP/Azure</li>
+                    <li>Kubernetes orchestration</li>
+                    <li>Auto-scaling capabilities</li>
+                    <li>Load balancing</li>
+                </ul>
+                
+                <h3 style="margin-top: 40px;">🔐 Security & Compliance:</h3>
+                <ul>
+                    <li>API authentication (OAuth2)</li>
+                    <li>Data encryption</li>
+                    <li>GDPR compliance</li>
+                    <li>Audit logging</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 40px; font-size: 1.2em; background: #fff3cd; padding: 15px; border-radius: 10px;">
+            <strong>Note:</strong> Current implementation uses classical ML models for rapid development and demonstration. Production systems can leverage advanced transformer models for improved accuracy.
+        </p>
+    </div>
+</div>
+
+<!-- Slide 15: Summary -->
+<div class="slide">
+    <h2>✅ Summary</h2>
+    
+    <div style="margin-top: 50px;">
+        <h3>What We Built:</h3>
+        <div class="three-column" style="margin: 30px 0;">
+            <div class="project-card">
+                <h3>1️⃣ ML Model</h3>
+                <p>87% accurate sentiment classifier</p>
+            </div>
+            <div class="project-card">
+                <h3>2️⃣ REST API</h3>
+                <p>Fast, scalable microservice</p>
+            </div>
+            <div class="project-card">
+                <h3>3️⃣ AI Agent</h3>
+                <p>Intelligent automation system</p>
+            </div>
+        </div>
+        
+        <h3 style="margin-top: 50px;">Key Achievements:</h3>
+        <ul style="font-size: 1.4em; line-height: 2;">
+            <li>✅ <strong>87% accuracy</strong> on sentiment classification</li>
+            <li>✅ <strong>&lt;1.5 second</strong> end-to-end response time</li>
+            <li>✅ <strong>4 intelligent actions</strong> for complete workflow automation</li>
+            <li>✅ <strong>Production-ready</strong> with Docker support</li>
+            <li>✅ <strong>Fully documented</strong> and tested</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Slide 16: Q&A -->
+<div class="slide">
+    <h1 style="text-align: center; margin-top: 15%;">❓ Questions & Discussion</h1>
+    
+    <div style="text-align: center; margin-top: 80px;">
+        <p style="font-size: 1.8em; color: #667eea;">
+            <strong>Live Demo Available</strong>
+        </p>
+        <p style="font-size: 1.3em; margin-top: 20px; color: #7f8c8d;">
+            Full source code, documentation, and setup instructions included
+        </p>
+        
+        <div style="margin-top: 60px; font-size: 1.2em;">
+            <p><strong>GitHub Repository:</strong> <a href="https://github.com/ebserapiop6/Sentiment-API-Agent-Pipeline" style="color: #667eea; text-decoration: none;">Sentiment-API-Agent-Pipeline</a></p>
+            <p style="margin-top: 20px;"><strong>Contact:</strong> <a href="https://www.linkedin.com/in/ethan-serapio-32b2b0220/" style="color: #667eea; text-decoration: none;">Ethan Serapio on LinkedIn</a></p>
+        </div>
+    </div>
+    
+    <p style="text-align: center; margin-top: 80px; font-size: 1.1em; color: #95a5a6;">
+        Built for Sprout Solutions | December 2025
+    </p>
+</div>
+
+<!-- Navigation Controls -->
+<div class="navigation">
+    <button class="nav-button" onclick="previousSlide()">← Previous</button>
+    <button class="nav-button" onclick="nextSlide()">Next →</button>
+</div>
+
+<div class="slide-number">
+    <span id="current-slide">1</span> / <span id="total-slides">16</span>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    
+    document.getElementById('total-slides').textContent = totalSlides;
+    
+    function showSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (n + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add('active');
+        document.getElementById('current-slide').textContent = currentSlide + 1;
+    }
+    
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    function previousSlide() {
+        showSlide(currentSlide - 1);
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            previousSlide();
+        }
+    });
+</script>
+
+</body>
+</html>
